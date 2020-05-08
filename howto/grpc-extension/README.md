@@ -5,14 +5,14 @@ Dapr can be extended by using itself as a library to create a new custom binary.
 You can include Dapr as library by pulling it as dependency,
  
 - Add Dapr code base as dependency - `go get -u github.com/dapr/dapr`
-- Add Component-Contrib code base as dependency - `go get -u github.com/dapr/components-contribr`
+- Add Component-Contrib code base as dependency - `go get -u github.com/dapr/components-contrib`
  
 ## Adding custom functionality as gRPC endpoints
  
 Dapr provides a `CustomComponent` abstraction to add a custom feature as a gRPC endpoint. gRPC is useful for low-latency, high performance scenarios and has deep language integration using the proto clients.
  
 ```go
-CustomComponent interface {
+type CustomComponent interface {
    Init(metadata Metadata) error
    RegisterServer(s *grpc.Server) error
 }

@@ -7,7 +7,7 @@ For apps that use these bindings, it is easy to configure a KEDA autoscaler.
 
 ## Install KEDA
 
-To install KEDA, follow the [Deploying KEDA](https://keda.sh/deploy/) instructions on the KEDA website.
+To install KEDA, follow the [Deploying KEDA](https://keda.sh/docs/deploy/) instructions on the KEDA website.
 
 ## Create KEDA enabled Dapr binding
 
@@ -29,6 +29,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Component
 metadata:
   name: kafkaevent
+  namespace: default
 spec:
   type: bindings.kafka
   metadata:
